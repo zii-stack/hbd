@@ -1,0 +1,8 @@
+FOTO KELUARGA
+
+Simpan foto keluarga di folder ini dengan nama:
+foto1.jpg, foto2.jpg, foto3.jpg, dan seterusnya.
+
+Format yang didukung: JPG, JPEG, PNG, WEBP.
+Website akan mencoba membaca foto-foto tersebut secara otomatis.
+Foto tidak diunggah ke server; semuanya dibuka dari folder project lokal.

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!-- HADIAH ULANG TAHUN UNTUK IBU | Project HTML, CSS, JavaScript terpisah. Lihat README.md untuk petunjuk. -->
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbf4ea">
+<title>Happy Birthday, Mom ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Nunito+Sans:wght@400;600&family=Pinyon+Script&family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<!-- Bunga SVG yang dipakai berulang -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="flower" viewBox="-50 -50 100 100"><g fill="currentColor">
+<ellipse rx="13" ry="26" cy="-20"/><ellipse rx="13" ry="26" cy="-20" transform="rotate(72)"/><ellipse rx="13" ry="26" cy="-20" transform="rotate(144)"/><ellipse rx="13" ry="26" cy="-20" transform="rotate(216)"/><ellipse rx="13" ry="26" cy="-20" transform="rotate(288)"/></g><circle r="8" fill="#c8a56a"/></symbol>
+</defs></svg>
+
+<div id="loader" role="status"><svg class="spin" viewBox="0 0 100 100"><use href="#flower"/></svg><p>Menyiapkan sesuatu yang spesial…</p></div>
+<div id="progress" aria-hidden="true"></div>
+<div id="petals" aria-hidden="true"></div>
+<div id="dust" aria-hidden="true"></div>
+<div class="glow g1" data-par="-0.06" aria-hidden="true"></div>
+<div class="glow g2" data-par="-0.1" aria-hidden="true"></div>
+
+<!-- HALAMAN PEMBUKA -->
+<section id="intro" aria-label="Halaman pembuka">
+  <svg class="fl f1" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+  <svg class="fl f2" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+  <svg class="fl f3" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+  <div class="intro-in">
+    <h1><span>Happy</span> <span>Birthday,</span> <span>Mom ❤️</span></h1>
+    <p class="sub">Untuk wanita terhebat dalam hidupku.</p>
+    <div class="env-stage" aria-hidden="true">
+      <div class="env-float">
+        <div class="envelope" id="envelope">
+          <div class="env-back"></div>
+          <div class="env-letter"><span>Untuk Ibu</span></div>
+          <div class="env-front"></div>
+          <div class="env-flap"></div>
+          <div class="env-seal">❤</div>
+        </div>
+      </div>
+    </div>
+    <button id="openBtn" class="btn" type="button">Buka Hadiah Spesial</button>
+  </div>
+</section>
+
+<div id="site" class="pre">
+<header class="top">
+  <a class="brand" href="#surat">Mom ❤</a>
+  <nav id="nav" aria-label="Navigasi bagian">
+    <a href="#surat">Surat</a><a href="#galeri">Galeri</a><a href="#kenangan">Kenangan</a><a href="#kue">Kue</a><a href="#taman">Taman</a><a href="#doa">Doa</a><a href="#penutup">Penutup</a>
+  </nav>
+  <div class="tools">
+    <span class="np" aria-hidden="true">Monokrom · Tulus</span>
+    <button id="musicBtn" class="ico off" type="button" aria-pressed="false" aria-label="Musik latar"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="note" aria-hidden="true">♫</span></button>
+    <button id="fsBtn" class="ico" type="button" aria-label="Layar penuh">⛶</button>
+    <button id="burger" class="ico" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+<!-- SURAT -->
+<section id="surat" class="sec deco">
+  <div class="wrap narrow">
+    <h2 class="reveal">Untuk Ibu Tercinta</h2>
+    <svg class="orn" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+    <article class="paper reveal">
+      <svg class="corner c1" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg><svg class="corner c2" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+      <p id="greet" class="greet"></p>
+      <div id="letterBody"></div>
+      <p id="sign" class="sign" hidden></p>
+      <button id="skipBtn" class="link" type="button">Tampilkan semua tulisan</button>
+    </article>
+  </div>
+</section>
+
+<!-- GALERI -->
+<section id="galeri" class="sec alt">
+  <div class="wrap">
+    <h2 class="reveal">Potongan Kecil dari Kenangan Terindah Kita</h2>
+    <p class="lead reveal">Setiap foto menyimpan cerita, setiap momen menjadi kenangan yang selalu ingin kuingat.</p>
+    <div class="tabs" role="group" aria-label="Filter galeri">
+      <button type="button" data-f="all" aria-pressed="true">Semua</button>
+      <button type="button" data-f="fav" aria-pressed="false">Favorit ♥</button>
+    </div>
+    <div id="grid" class="grid"></div>
+    <p id="empty" class="empty"></p>
+  </div>
+</section>
+
+<!-- KARTU -->
+<section id="kenangan" class="sec deco">
+  <div class="wrap">
+    <h2 class="reveal">Kenangan dan Pesan</h2>
+    <p class="lead reveal">Ketuk setiap kartu untuk membaca pesannya.</p>
+    <div class="cards">
+      <button class="card" type="button" aria-expanded="false"><span class="face front"><span class="em">🌸</span>Terima Kasih, Ibu</span><span class="face back">Terima kasih sudah menjadi tempat pulang yang paling hangat, dan sabar menemaniku tumbuh, dari langkah pertama sampai hari ini.</span></button>
+      <button class="card" type="button" aria-expanded="false"><span class="face front"><span class="em">📷</span>Kenangan Bersamamu</span><span class="face back">Aku selalu ingat hal-hal kecil: suara Ibu memanggil dari dapur, genggaman tangan Ibu. Kenangan sederhana itulah yang paling kuhargai.</span></button>
+      <button class="card" type="button" aria-expanded="false"><span class="face front"><span class="em">🤲</span>Doa Terbaik Untukmu</span><span class="face back">Semoga Ibu selalu sehat, hatinya tenang, dan hari-harinya dipenuhi hal-hal yang membuat Ibu tersenyum.</span></button>
+      <button class="card" type="button" aria-expanded="false"><span class="face front"><span class="em">🏡</span>Kamu Adalah Rumah</span><span class="face back">Di mana pun aku berada, ada satu tempat yang selalu terasa seperti rumah: Ibu.</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- KUE ULANG TAHUN -->
+<section id="kue" class="sec cake-sec">
+  <div id="bunting" class="bunting" aria-hidden="true"></div>
+  <div class="wrap narrow">
+    <h2 class="reveal">Waktunya Meniup Lilin</h2>
+    <p class="lead reveal">Sebuah kue kecil dengan doa dan cinta yang besar untuk Ibu.</p>
+    <div id="cake" class="cake reveal" role="img" aria-label="Animasi kue ulang tahun tiga tingkat dengan krim meleleh, bunga, mutiara, dan lima lilin">
+      <div class="cake-stars" aria-hidden="true">
+        <i style="--x:10%;--y:14%;--s:3px;--d:.1s"></i><i style="--x:86%;--y:20%;--s:2px;--d:1.2s"></i><i style="--x:22%;--y:40%;--s:2px;--d:2s"></i>
+        <i style="--x:92%;--y:52%;--s:3px;--d:.6s"></i><i style="--x:7%;--y:68%;--s:2px;--d:1.7s"></i><i style="--x:78%;--y:8%;--s:2px;--d:2.4s"></i>
+        <i style="--x:60%;--y:30%;--s:2px;--d:.9s"></i><i style="--x:36%;--y:10%;--s:3px;--d:1.5s"></i>
+      </div>
+      <p class="cake-hint" aria-hidden="true">Tekan tombol <b>Buat Kue</b><br>untuk memulai ✨</p>
+      <svg id="cakeSvg" class="cake-svg" viewBox="0 0 400 420" aria-hidden="true"></svg>
+      <p class="cap">happy birthday!<small id="capName">untuk Ibu</small></p>
+    </div>
+    <p id="cakeStatus" class="cake-status" aria-live="polite"></p>
+    <div class="cake-actions"><button id="makeBtn" class="btn" type="button">Buat Kue</button><button id="blowBtn" class="btn" type="button" hidden>Tiup Lilin</button><button id="relightBtn" class="btn ghost" type="button" hidden>Nyalakan lagi</button></div>
+    <button id="replayBtn" class="link cake-replay" type="button" hidden>Buat kue lagi dari awal</button>
+    <p id="wish" class="wish" aria-live="polite"></p>
+  </div>
+  <div id="balloons" class="balloons" aria-hidden="true"></div>
+</section>
+
+<!-- TAMAN -->
+<section id="taman" class="sec alt">
+  <div class="wrap narrow">
+    <h2 class="reveal">Taman untuk Ibu</h2>
+    <p class="lead reveal">Ketuk taman ini untuk menanam bunga. Setiap bunga adalah satu doa untuk Ibu.</p>
+    <div id="garden" class="garden reveal" role="button" tabindex="0" aria-label="Ketuk untuk menanam bunga">
+      <i class="sun"></i><i class="gc c1"></i><i class="gc c2"></i>
+      <i class="bf"></i><i class="bf b2"></i>
+      <div class="ground"></div><div id="plants"></div>
+    </div>
+    <p id="gcount" class="gcount" aria-live="polite"></p>
+    <div class="cake-actions"><button id="plantBtn" class="btn" type="button">Tanam bunga</button><button id="clearBtn" class="btn ghost" type="button">Kosongkan taman</button></div>
+  </div>
+</section>
+
+<!-- DOA -->
+<section id="doa" class="sec alt deco">
+  <div class="wrap narrow">
+    <h2 class="reveal">Doa Terbaik Untuk Ibu</h2>
+    <div class="doa reveal">
+      <svg class="orn" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+      <blockquote>Ya Allah, jagalah ibuku dalam setiap langkahnya. Berikanlah kesehatan, umur yang berkah, kebahagiaan, ketenangan hati, serta limpahkanlah rezeki dan kebaikan kepadanya. Ampunilah segala dosanya dan bahagiakanlah ibuku di dunia maupun akhirat. Aamiin.</blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- PENUTUP -->
+<section id="penutup" class="sec end">
+  <div class="hearts" aria-hidden="true"></div>
+  <div class="wrap narrow reveal">
+    <svg class="orn big" viewBox="0 0 100 100" aria-hidden="true"><use href="#flower"/></svg>
+    <div class="beat" aria-hidden="true">❤</div>
+    <h2>Selamat Ulang Tahun, Ibu Tercinta ❤️</h2>
+    <p class="lead">Terima kasih sudah menjadi bagian terbaik dalam hidupku. Aku mungkin belum bisa memberikan banyak hal, tetapi aku akan selalu berusaha menjadi anak yang bisa membuat Ibu bangga dan bahagia.</p>
+  </div>
+</section>
+</main>
+</div>
+
+<button id="toTop" class="ico top-btn" type="button" aria-label="Kembali ke atas" hidden>↑</button>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Foto diperbesar" hidden>
+  <button class="lb-x" type="button" aria-label="Tutup">✕</button>
+  <button class="lb-nav lb-prev" type="button" aria-label="Foto sebelumnya">‹</button>
+  <figure><img id="lbImg" alt=""><figcaption id="lbCap"></figcaption></figure>
+  <button class="lb-nav lb-next" type="button" aria-label="Foto berikutnya">›</button>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<audio id="bgm" loop preload="metadata" aria-label="Lagu latar Monokrom oleh Tulus"></audio>
+<script src="script.js" defer></script>
+</body>
+</html>
